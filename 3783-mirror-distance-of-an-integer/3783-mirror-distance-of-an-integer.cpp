@@ -8,7 +8,6 @@ public:
         rev = (rev*10)+rem;
         n = n/10;
         }
-        int diff = abs(temp-rev);
-        return diff;        
+        return abs(temp-rev);        
     }
 };
