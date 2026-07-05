@@ -2,7 +2,6 @@ class Solution {
 public:
     vector<int> findWordsContaining(vector<string>& words, char x) {
         vector<int> ans;
-        ans.reserve(words.size());
         for(int i = 0 ; i < words.size(); i++){
             for( char ch : words[i]){
                 if ( ch == x ){
