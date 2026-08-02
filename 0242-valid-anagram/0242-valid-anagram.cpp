@@ -1,13 +1,19 @@
 class Solution {
 public:
     bool isAnagram(string s, string t) {
-        if(s.size() == t.size()){
-         sort(s.begin() ,s.end());   
-         sort(t.begin() ,t.end());   
+        if (s.size() != t.size()) return false;
+        
+        int count[26] = {0};
+
+        for (int i = 0; i < s.size(); i++) {
+            count[s[i] - 'a']++; 
+            count[t[i] - 'a']--; 
         }
-        if( s == t){
-            return true;
+        
+        for (int i = 0; i < 26; i++) {
+            if (count[i] != 0) return false;
         }
-        return false;
+        
+        return true;
     }
 };
